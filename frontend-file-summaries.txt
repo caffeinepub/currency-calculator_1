@@ -1,0 +1,13 @@
+{
+  "frontend/src/App.tsx": "Root application component that composes AppHeader, CurrencyCalculator, and AppFooter in a full-height dark navy layout.",
+  "frontend/src/hooks/useQueries.ts": "React Query hook for fetching live exchange rates with four sequential fallback APIs (open.er-api.com, Fawaz jsDelivr CDN, Fawaz Pages CDN, Frankfurter) and a static offline fallback so the app always works; exports SUPPORTED_CURRENCIES and ExchangeRates interface.",
+  "frontend/src/hooks/useCurrencyExchange.ts": "Custom hook encapsulating currency exchange state (from/to currencies, amount, swap) and derived values (convertedAmount, exchangeRate, lastUpdated, isStatic) using useExchangeRates.",
+  "frontend/src/components/AppHeader.tsx": "App header with hero background image, currency logo, app title, and subtitle displayed over a dark overlay.",
+  "frontend/src/components/AppFooter.tsx": "Footer with copyright year, caffeine.ai attribution link with UTM params, and a gold heart icon.",
+  "frontend/src/components/CurrencySelect.tsx": "Reusable currency dropdown using shadcn Select, showing flag emoji, currency code, full name, and symbol for all 20 supported currencies.",
+  "frontend/src/components/CurrencyCard.tsx": "Styled card wrapper with dark navy background, border, rounded corners, and drop shadow for consistent section containers.",
+  "frontend/src/components/CurrencyCalculator.tsx": "Main calculator UI with from/to currency selectors (passing the correct `currencies` prop), amount input, swap button, quick amounts, live result display, and an amber warning banner when static offline rates are being used instead of live data.",
+  "frontend/src/lib/utils.ts": "Utility file exporting the cn() class merging helper using clsx and tailwind-merge.",
+  "frontend/src/index.css": "Global CSS with OKLCH dark navy/gold design tokens, Inter/Sora font imports, and forced dark color scheme.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with custom navy and gold color palettes, Sora/Inter font families, card/gold box shadows, and updated border radius tokens."
+}

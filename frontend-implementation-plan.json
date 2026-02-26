@@ -1,0 +1,29 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix currency exchange rate fetching — app not working",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "summary": "Fix exchange rate fetching in useQueries.ts to successfully retrieve live rates from open.er-api.com with CDN fallback, handle network errors gracefully, and display meaningful error states when all fetch attempts fail",
+      "acceptanceCriteria": [
+        "Exchange rates load successfully on app start without a blank or broken UI",
+        "If the primary API (open.er-api.com) fails, the fallback CDN API is attempted automatically",
+        "If all fetches fail, a user-facing error message is shown in the calculator UI",
+        "The converted amount, exchange rate, and last-updated timestamp all display correctly once rates are fetched"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Fix the fetchExchangeRates function to correctly construct the API URL for open.er-api.com, ensure proper error handling with automatic fallback to the Fawaz CDN API when the primary fetch fails, and validate the response structure before returning rates. Update the useExchangeRates hook to properly expose error states to consuming components."
+        },
+        {
+          "path": "frontend/src/components/CurrencyCalculator.tsx",
+          "operation": "modify",
+          "description": "Add error state handling by consuming the error state from useExchangeRates (via useCurrencyExchange). Display a user-friendly error message within the calculator card when rate fetching fails, styled consistently with the existing dark navy theme. Ensure the UI remains usable and shows a clear call-to-action (e.g., retry button) when rates cannot be loaded."
+        }
+      ]
+    }
+  ]
+}

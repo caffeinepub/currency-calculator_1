@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "A real-time currency calculator app that fetches live exchange rates and allows users to convert between currencies using up-to-date values.",
+  "architectural_notes": [
+    "Use a live currency exchange rate API (e.g., ExchangeRate-API or Open Exchange Rates) to fetch real-time values"
+  ],
+  "known_issues": [],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-build-a-currency-calculator-ui-that-allows-users-to-select-a-source-currency-and-a-target-currency-from-dropdown-menus-enter-an-amount-to-convert-and-immediately-see-the-converted-result-using-the-latest-fetched-exchange-rate-show-the-current-exchange-rate-and-the-timestamp-of-the-last-rate-update",
+      "title": "Build a currency calculator UI that allows users to: select a source currency and a target currency from dropdown menus, enter an amount to convert, and immediately see the converted result using the latest fetched exchange rate. Show the current exchange rate and the timestamp of the last rate update.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-sleek-modern-financial-dashboard-visual-theme-dark-navy-charcoal-backgrounds-crisp-white-and-gold-accent-typography-card-based-layout-with-subtle-shadows-and-rounded-corners-and-clean-sans-serif-fonts-enforce-the-theme-consistently-across-all-ui-components",
+      "title": "Apply a sleek, modern financial dashboard visual theme: dark navy/charcoal backgrounds, crisp white and gold accent typography, card-based layout with subtle shadows and rounded corners, and clean sans-serif fonts. Enforce the theme consistently across all UI components.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-display-a-currency-calculator-logo-icon-and-a-decorative-hero-background-image-used-in-the-app-header",
+      "title": "Generate and display a currency calculator logo/icon and a decorative hero background image used in the app header.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-exchange-rate-fetching-in-usequeries-ts-so-that-live-rates-are-successfully-retrieved-from-open-er-api-com-with-fallback-to-the-fawaz-cdn-api-ensure-network-errors-are-handled-gracefully-and-the-ui-displays-a-meaningful-error-state-when-all-fetch-attempts-fail-rather-than-silently-breaking",
+      "title": "Fix the exchange rate fetching in useQueries.ts so that live rates are successfully retrieved from open.er-api.com (with fallback to the Fawaz CDN API). Ensure network errors are handled gracefully and the UI displays a meaningful error state when all fetch attempts fail rather than silently breaking.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Real-time currency calculator with live exchange rates",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement a backend actor that fetches live exchange rates from a public exchange rate API (e.g., https://api.exchangerate-api.com/v4/latest/USD or similar free endpoint) using Motoko HTTP outcalls, caches the latest rates, and exposes query/update functions to retrieve exchange rates between any two supported currencies.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Verify and fix the backend Motoko actor's fetchExchangeRates HTTP outcall. Ensure the outbound GET request to the exchange rate API endpoint is correctly formed, the transform function properly sanitizes the HTTP response, and the actor returns valid rate data to the frontend.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Currency Calculator",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-fix-the-exchange-rate-fetching-in-usequeries-ts-so-that-live-rates-are-successfully-retrieved-from-open-er-api-com-with-fallback-to-the-fawaz-cdn-api-ensure-network-errors-are-handled-gracefully-and-the-ui-displays-a-meaningful-error-state-when-all-fetch-attempts-fail-rather-than-silently-breaking",
+      "featureTitle": "Fix the exchange rate fetching in useQueries.ts so that live rates are successfully retrieved from open.er-api.com (with fallback to the Fawaz CDN API). Ensure network errors are handled gracefully and the UI displays a meaningful error state when all fetch attempts fail rather than silently breaking.",
+      "files": [
+        "frontend/src/components/CurrencyCalculator.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

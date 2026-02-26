@@ -1,0 +1,58 @@
+{
+  "kind": "build_request",
+  "title": "Fix currency exchange rate fetching — app not working",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "text": "Fix the exchange rate fetching in useQueries.ts so that live rates are successfully retrieved from open.er-api.com (with fallback to the Fawaz CDN API). Ensure network errors are handled gracefully and the UI displays a meaningful error state when all fetch attempts fail rather than silently breaking.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "its not working"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Exchange rates load successfully on app start without a blank or broken UI",
+        "If the primary API (open.er-api.com) fails, the fallback CDN API is attempted automatically",
+        "If all fetches fail, a user-facing error message is shown in the calculator UI",
+        "The converted amount, exchange rate, and last-updated timestamp all display correctly once rates are fetched"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Verify and fix the backend Motoko actor's fetchExchangeRates HTTP outcall. Ensure the outbound GET request to the exchange rate API endpoint is correctly formed, the transform function properly sanitizes the HTTP response, and the actor returns valid rate data to the frontend.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "its not working"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Motoko actor's fetchExchangeRates function successfully completes an HTTP outcall to the configured API endpoint",
+        "The transform function correctly strips non-deterministic headers so the response passes consensus",
+        "The actor returns a valid, parseable exchange rate payload",
+        "No traps or unhandled errors occur during the HTTP outcall lifecycle"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change the overall UI layout or visual theme",
+    "Do not modify immutable frontend paths: useInternetIdentity.ts, useActor.ts, main.tsx, or any component under frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "Adding new currency pairs or expanding the supported currency list",
+    "Changing the financial dashboard visual theme",
+    "Adding new UI features beyond fixing the broken exchange rate flow"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

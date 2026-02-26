@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Motoko actor that exposes a transform function for HTTP response canonicalization and a fetchExchangeRates function that makes an outbound HTTP GET request to a demo Coin Stats API endpoint.",
+  "feature_evidence.json": "Feature evidence report linking the exchange rate fetching fix (useQueries.ts, CurrencyCalculator.tsx) to its components, test IDs, and confidence level.",
+  "frontend-file-summaries.txt": "JSON map of frontend source file paths to one-sentence descriptions summarizing each file's role in the currency calculator application.",
+  "frontend/index.css": "Tailwind CSS entry file defining OKLCH-based CSS custom properties for light and dark themes including background, foreground, card, chart, and sidebar color tokens.",
+  "frontend/index.html": "Minimal HTML shell for the Currency Calculator SPA, mounting the React app at the #root div and loading the main.tsx module entry point.",
+  "frontend/src/App.tsx": "Root React component that arranges AppHeader, CurrencyCalculator, and AppFooter in a full-height dark navy flex layout.",
+  "frontend/src/components/AppFooter.tsx": "Footer component displaying the current year copyright, a gold heart icon, and a caffeine.ai attribution link with UTM parameters.",
+  "frontend/src/components/AppHeader.tsx": "Header component with a hero background image, dark overlay, currency logo, app title, and a subtitle about real-time exchange rates.",
+  "frontend/src/components/CurrencyCalculator.tsx": "Main calculator UI component with currency selectors, amount input, swap button, quick-amount shortcuts, live conversion result, and error/static-rate warning banners.",
+  "frontend/src/components/CurrencyCard.tsx": "Reusable styled card wrapper applying dark navy background, border, rounded corners, and drop shadow via Tailwind utility classes.",
+  "frontend/src/components/CurrencySelect.tsx": "Dropdown component built on shadcn Select that renders flag emoji, currency code, full name, and symbol for each of the 20 supported currencies.",
+  "frontend/src/hooks/useActor.ts": "React Query hook that creates and caches an ICP backend actor, using the current Internet Identity and invalidating dependent queries whenever the actor changes.",
+  "frontend/src/hooks/useCurrencyExchange.ts": "Custom hook managing from/to currency and amount state, computing convertedAmount and exchangeRate from live rates, and exposing swap, loading, and error state.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides a React context and hook for Internet Identity authentication on the ICP platform, managing login/logout state and persisting identity across page reloads using AuthClient.",
+  "frontend/src/hooks/useQueries.ts": "Defines supported currencies, static fallback exchange rates, and async fetch functions that try multiple live exchange rate APIs (open.er-api.com, Fawaz CDN/Pages) with timeout handling and a React Query hook.",
+  "frontend/src/index.css": "Global CSS file that imports Google Fonts, sets up Tailwind directives, and defines a dark navy/charcoal OKLCH-based CSS custom property theme enforced app-wide.",
+  "frontend/src/lib/utils.ts": "Exports a single `cn` utility function that merges Tailwind CSS class names using clsx and tailwind-merge.",
+  "frontend/src/main.tsx": "Application entry point that renders the React app wrapped with QueryClientProvider and InternetIdentityProvider into the DOM root.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the default theme with custom OKLCH-based color tokens (navy, gold), typography/container-queries/animate plugins, custom fonts, shadows, border radii, and keyframe animations.",
+  "project_state.json": "Tracks the project's versioned state including existing implemented features, pending new feature requests, architectural notes, and known issues for the Currency Calculator app."
+}
