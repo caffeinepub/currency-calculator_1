@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit[wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono[wght].woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Sports Tracker — Dark Athletic Theme */
+    --background: 0.11 0.012 260;
+    --foreground: 0.96 0.005 260;
+
+    --card: 0.14 0.015 260;
+    --card-foreground: 0.96 0.005 260;
+
+    --popover: 0.16 0.018 260;
+    --popover-foreground: 0.96 0.005 260;
+
+    /* Electric green primary */
+    --primary: 0.82 0.18 142;
+    --primary-foreground: 0.1 0.01 142;
+
+    --secondary: 0.18 0.02 260;
+    --secondary-foreground: 0.85 0.01 260;
+
+    --muted: 0.19 0.018 260;
+    --muted-foreground: 0.52 0.015 260;
+
+    --accent: 0.82 0.18 142;
+    --accent-foreground: 0.1 0.01 142;
+
+    --destructive: 0.6 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.22 0.018 260;
+    --input: 0.19 0.018 260;
+    --ring: 0.82 0.18 142;
+
+    /* Sport category colors */
+    --sport-soccer: 0.78 0.18 142;
+    --sport-basketball: 0.75 0.2 55;
+    --sport-tennis: 0.8 0.18 115;
+    --sport-cricket: 0.75 0.16 80;
+    --sport-american-football: 0.68 0.2 30;
+    --sport-baseball: 0.7 0.16 200;
+    --sport-rugby: 0.72 0.18 340;
+
+    --chart-1: 0.82 0.18 142;
+    --chart-2: 0.75 0.2 55;
+    --chart-3: 0.7 0.16 200;
+    --chart-4: 0.68 0.2 30;
+    --chart-5: 0.72 0.18 340;
+
+    --sidebar: 0.12 0.014 260;
+    --sidebar-foreground: 0.96 0.005 260;
+    --sidebar-primary: 0.82 0.18 142;
+    --sidebar-primary-foreground: 0.1 0.01 142;
+    --sidebar-accent: 0.18 0.02 260;
+    --sidebar-accent-foreground: 0.85 0.01 260;
+    --sidebar-border: 0.22 0.018 260;
+    --sidebar-ring: 0.82 0.18 142;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-sport-soccer {
+    color: oklch(var(--sport-soccer));
+  }
+  .text-sport-basketball {
+    color: oklch(var(--sport-basketball));
+  }
+  .text-sport-tennis {
+    color: oklch(var(--sport-tennis));
+  }
+  .text-sport-cricket {
+    color: oklch(var(--sport-cricket));
+  }
+  .text-sport-american-football {
+    color: oklch(var(--sport-american-football));
+  }
+  .text-sport-baseball {
+    color: oklch(var(--sport-baseball));
+  }
+  .text-sport-rugby {
+    color: oklch(var(--sport-rugby));
+  }
+
+  .bg-sport-soccer {
+    background-color: oklch(var(--sport-soccer) / 0.12);
+  }
+  .bg-sport-basketball {
+    background-color: oklch(var(--sport-basketball) / 0.12);
+  }
+  .bg-sport-tennis {
+    background-color: oklch(var(--sport-tennis) / 0.12);
+  }
+  .bg-sport-cricket {
+    background-color: oklch(var(--sport-cricket) / 0.12);
+  }
+  .bg-sport-american-football {
+    background-color: oklch(var(--sport-american-football) / 0.12);
+  }
+  .bg-sport-baseball {
+    background-color: oklch(var(--sport-baseball) / 0.12);
+  }
+  .bg-sport-rugby {
+    background-color: oklch(var(--sport-rugby) / 0.12);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.3 0.018 260) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: oklch(0.3 0.018 260);
+    border-radius: 2px;
+  }
+
+  .grid-noise {
+    background-image: radial-gradient(
+      oklch(0.82 0.18 142 / 0.03) 1px,
+      transparent 1px
+    );
+    background-size: 32px 32px;
+  }
+}
+
+/* Live pulse animation */
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+}
+
+.animate-live-pulse {
+  animation: live-pulse 1.2s ease-in-out infinite;
+}
+
+/* Score glow */
+@keyframes score-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 8px oklch(0.82 0.18 142 / 0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px oklch(0.82 0.18 142 / 0.8);
+  }
+}
+
+.animate-score-glow {
+  animation: score-glow 2s ease-in-out infinite;
+}
